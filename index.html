@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chat App</title>
+  <script src="https://kit.fontawesome.com/815edcd824.js" crossorigin="anonymous"></script>
+  <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script defer src="script.js"></script>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(50, 119, 81);
+    }
+    .chat-app{
+      border: 3px grey solid;
+      margin-top:10px;
+      background-color: rgba(0, 0, 0, 0.281);
+      height: 600px;
+      width: 330px;
+      border-radius: 20px;
+    }
+    #message-container {
+      width: 310px;
+      margin-top: 15px;
+      color: white;
+      margin-left: 10px;
+    }
+
+    #message-container div {
+      background-color: rgba(182, 182, 182, 0.329);
+      padding: 5px;
+      padding-left: 7px;
+      border-radius: 5px;
+      margin: 2px;
+    }
+
+
+    #send-container {
+      position: fixed;
+      width: 310px;
+      border-radius:500px;
+      display: flex;
+      top: 570px;
+    }
+
+    #message-input {
+      margin-left: 25px;
+      margin-right: 25px;
+      flex-grow: 1;
+      border-radius: 500px;
+      background-color: rgb(51, 51, 51);
+      height: 30px;
+      border:0;
+      color: white;
+    }
+    .sent{
+      margin-top: -5px;
+     background-color:rgba(0,0,0,0);
+     border-radius: 500px;
+     height: 40px;
+     width: 40px;
+     border: 1px rgb(255, 255, 255) solid;
+     cursor: pointer;
+    }
+    .sent i{
+      font-size: 20px;
+      transition: 0.5s;
+    }
+    .sent:hover{
+      color: rgb(0, 217, 255);
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-app">
+  <div id="message-container"></div>
+  <form id="send-container">
+    <input type="text" id="message-input">
+    <button class="sent"><i class="fas fa-paper-plane" type="submit" id="send-button"></i></button>
+  </form>
+  </div>
+</body>
+</html>
